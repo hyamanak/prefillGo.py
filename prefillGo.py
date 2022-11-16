@@ -155,7 +155,7 @@ class PrefillGo:
           "overwriteExistingTranslations": True,
           "translationMemorySettings": {
                "useTranslationMemory": True,
-               "translationMemoryThreshold": 0,
+               "translationMemoryThreshold": 0.85,
                "confirm100PercentMatches": True,
                "confirm101PercentMatches": True,
                "lock100PercentMatches": False,
