@@ -64,14 +64,14 @@ class PrefillGo:
      def get_project_uids(self):
           project_uids = []
           with open(self.url_file, 'r') as file:
-               uid_regex = r"(?<=/show/).*?(?=/)"
+               uid_regex = r"(/show/)([a-zA-Z0-9]{21})"
 
                for url in file:
                     uid = re.search(uid_regex, url)
-                    if uid.group() is None:
+                    if uid.group(2) is None:
                          raise TypeError(url,"is not a valid URL")
-                    if uid.group() not in project_uids:
-                         project_uids.append(uid.group())              
+                    if uid.group(2) not in project_uids:
+                         project_uids.append(uid.group(2))              
                return project_uids
           
      def __get_job_uids(self, project_uid) -> list: ##jobuid
