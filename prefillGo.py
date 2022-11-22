@@ -64,7 +64,7 @@ class PrefillGo:
      def get_project_uids(self):
           project_uids = []
           with open(self.url_file, 'r') as file:
-               uid_regex = r"(/show/)([a-zA-Z0-9]{21})"
+               uid_regex = r"(/show/)([a-zA-Z0-9]+)(/)"
 
                for url in file:
                     uid = re.search(uid_regex, url)
